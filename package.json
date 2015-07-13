@@ -8,6 +8,5 @@
     "request": "^2.58.0"
   },
   "devDependencies": {
-    "electron-rebuild": "^0.2.3"
   }
 }
