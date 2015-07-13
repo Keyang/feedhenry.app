@@ -1,0 +1,6 @@
+body .ngdialog.ngdialog-theme-default .ngdialog-content{
+  background:#333;
+  color:#999;
+  width:60%;
+  min-width:450px;
+}

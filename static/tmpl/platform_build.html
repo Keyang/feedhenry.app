@@ -1,0 +1,82 @@
+<div class="flex-column itemsStretch colorlight padding10 animated fadeInRightSmall fast fullscreen" ng-controller="platform.build">
+  <h3 class="lighter"><span ng-click="back()" class="glyphicon glyphicon-arrow-left lighter padding10 clickable hover animated rotateIn" ></span>Build</h3>
+  <div class="flex-row flex-wrap itemsStretch vscroll" style="flex:1" >
+    <div class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter" loading-label="initProject" auto-load="true">Choose Project</h2>
+      <div class="clickable hover padding10" ng-class="{selected:params.project === p.guid}" ng-repeat="p in domain.getProjects()" 
+        ng-click="set('project',p.guid)">{{p.title}}</div>
+    </div>
+    <div ng-if="params.project" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter">Choose App to Build</h2>
+      <div class="clickable hover padding10" ng-repeat="p in domain.getBuildableApps(params.project)" 
+        ng-class="{selected:params.app === p.guid}"
+        ng-click="set('app',p.guid);set('appName',p.title);"><span class="icon-{{domain.getAppType(p)}} icon-2x padding5" style="vertical-align:middle"></span>{{p.title}}</div>
+    </div>
+
+    <div ng-if="params.app" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter" loading-label="gitref" auto-load="true">Choose Git Ref</h2>
+      <div class="card">
+      <div class="clickable hover padding10" ng-repeat="p in gitRefs" 
+        ng-class="{selected:params.gitRef.hash === p.hash}"
+        ng-click="set('gitRef',p)">
+        {{p.value}}
+        <div class="small colordim" style="text-align:right">{{p.type}}</div>
+      </div>
+      </div>
+    </div>
+    
+    <div ng-if="params.gitRef" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter">Choose Cloud</h2>
+      <div class="clickable hover padding10" ng-repeat="p in domain.getCloudApps(params.project)" 
+        ng-class="{selected:params.cloud_app === p.guid}"
+        ng-click="set('cloud_app',p.guid)"><span class="icon-{{domain.getAppType(p)}} icon-2x padding5" style="vertical-align:middle"></span>{{p.title}}</div>
+    </div>
+    <div ng-if="params.cloud_app" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter">Choose Environment</h2>
+      <div class="clickable hover padding10" ng-repeat="p in domain.getEnvs()" 
+        ng-class="{selected:params.environment === p}"
+        ng-click="set('environment',p)">{{p.toUpperCase()}}</div>
+    </div>
+    <div ng-if="params.environment" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter">Choose Platform</h2>
+      <div class="clickable hover padding10" ng-repeat="p in domain.getPlatforms()" 
+        ng-class="{selected:params.destination === p}"
+        ng-click="set('destination',p)">{{p.toUpperCase()}}</div>
+    </div>
+
+    <div ng-if="params.destination" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter" loading-label="credentials">Choose Credentials</h2>
+      <div class="clickable hover padding10" ng-repeat="p in cFilter = (credentials | filter: {platform:params.destination})" 
+        ng-class="{selected:params.bundleId === p.id}"
+        ng-click="set('bundleId',p.id);set('config',p.bundleType)">
+        {{p.bundleName}}
+        <div class="small colordim" style="text-align:right">{{p.bundleType | uppercase}}</div>
+      </div>
+      <div ng-if="cFilter.length === 0">No Credentials Found for {{params.destination.toUpperCase()}}</div>
+      <div class="clickable hover padding10 text-center" ng-click="addCredentials()">
+        <span class="glyphicon glyphicon-plus marginright15"></span>Add Credentials
+      </div>
+    </div>
+
+    <div ng-if="params.bundleId" class="flex-column animated zoomIn fast marginright15">
+      <h2 class="lighter">Other Information</h2>
+      <div class="form-group">
+        <label>Private Key Password</label>
+        <input type="password" class="form-control" ng-model="params.keypass"/>
+      </div>
+      <div class="form-group">
+        <label>Certificate Password</label>
+        <input type="password" class="form-control" ng-model="params.certpass"/>
+      </div>
+      <div class="form-group">
+        <label>Connection Tag</label>
+        <input type="text" class="form-control" ng-model="params.tag" value="1.0.0"/>
+      </div>
+    </div>
+  </div>
+  <div class="flex-row" style="justify-content:flex-end">
+    <div class="clickable shadow hover padding10 marginright15" ng-click="saveTask()">Save</div>
+    <div class="clickable shadow hover padding10 marginright15" ng-click="loadTask()">Load</div>
+    <div class="clickable shadow hover padding10 marginright15 text-center" style="width:100px" ng-click="build()">Build</div>
+  </div>
+</div>

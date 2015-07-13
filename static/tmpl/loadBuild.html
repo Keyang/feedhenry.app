@@ -1,0 +1,5 @@
+<div class="flex-column itemsStretch">
+  <div class="clickable hover padding10" ng-repeat="b in getCurDomain().savedBuild"
+    ng-click="confirm(b.params)"
+    >{{b.name}}</div>
+</div>

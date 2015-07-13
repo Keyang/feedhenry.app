@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="feedhenryApp">
+
+<head>
+  <title>RedHat Mobile Platform</title>
+  <link rel="stylesheet" href="./css/animate.css" />
+  <link rel="stylesheet" href="./css/app.css" />
+  <link rel="stylesheet" href="./css/ele.css" />
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="./bower_components/ngDialog/css/ngDialog.css" />
+  <link rel="stylesheet" href="./bower_components/ngDialog/css/ngDialog-theme-default.css" />
+  <link rel="stylesheet" href="./bower_components/ngDialog/css/ngDialog-theme-plain.css" />
+  <link rel="stylesheet" href="./css/dialog.css" />
+  <link rel="stylesheet" href="https://laya-cc.feedhenry.com/public/css/lib/font-awesome/font-awesome.css" />
+  <link rel="stylesheet" href="https://laya-cc.feedhenry.com/public/css/lib/feedhenry-font/feedhenry-font.css" />
+  <link rel="stylesheet" href="https://laya-cc.feedhenry.com/public/css/lib/font-mfizz/font-mfizz.css" />
+  <script src="./bower_components/jquery/dist/jquery.js"></script>
+  <script>
+    window.$ = window.jQuery = require("./bower_components/jquery/dist/jquery.js");
+  </script>
+  <script src="./bower_components/angular/angular.js"></script>
+  <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="./bower_components/ngDialog/js/ngDialog.js"></script>
+  <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+  <script src="./app/app.js"></script>
+  <!-- directives -->
+  <script src="./app/directives/splash.js"></script>
+  <script src="./app/directives/platform.js"></script>
+  <script src="./app/directives/btnAsync.js"></script>
+  <script src="./app/directives/loadingLabel.js"></script>
+
+  <!-- controllers -->
+  <script src="./app/controllers/splash.js"></script>
+  <script src="./app/controllers/home.js"></script>
+  <script src="./app/controllers/platform.js"></script>
+  <script src="./app/controllers/webview.js"></script>
+  <script src="./app/controllers/devicelist.js"></script>
+  <!-- factories -->
+  <script src="./app/factories/storage.js"></script>
+  <script src="./app/factories/fhc.js"></script>
+  <script src="./app/factories/task.js"></script>
+  <script src="./app/factories/domain.js"></script>
+  <script src="./app/factories/sys.js"></script>
+  <script src="./app/factories/buildQueue.js"></script>
+  <script src="./app/factories/util.js"></script>
+  <script src="./app/factories/deploy.js"></script>
+  <script src="./app/factories/data.js"></script>
+  <script src="./app/factories/device.js"></script>
+  <script src="./app/factories/installQueue.js"></script>
+</head>
+
+<body>
+  <div ui-view class="bgdark fullscreen vscroll hscroll">
+  </div>
+  <div ng-controller="webview">
+    <div ng-if="show===true" class="fullscreenfixed animated slideInUp fast flex-column" id="webview">
+      <div class="bgblack colorlight padding5 flex-row" id="toolbar">
+        <div class="clickable padding10 hover" ng-click="close()">CLOSE</div>
+      </div>
+      <div class="relative" style="flex:1">
+        <platform src="{{src}}" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+<div class="flex-column itemsStretch" ng-controller="devicelist">
+  <div class="padding10 small clickable hover" ng-click="openDevice(d)" ng-if="device.list().length>0" ng-repeat="d in filteredD= (device.list()|filter: {type:mType}) ">
+    <div class="padding10">
+      <i class="icon-2x icon-{{d.type}} marginright5"></i>{{d.name}}
+    </div>
+  </div>
+  <div ng-if="filteredD.length === 0">
+    No Device Found {{mType?"for "+mType.toUpperCase():""}}
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LOG</title>
+<style>
+body{
+  background:black;
+  color:#efefef;
+}
+</style>
+</head>
+<body>
+<pre id="board">
+</pre>
+</body>
+<script src="./bower_components/jquery/dist/jquery.js"> </script>
+<script>
+  window.$=window.jQuery=require("./bower_components/jquery/dist/jquery.js");
+  var board=document.getElementById("board");
+  var remote=require("remote");
+  var w=remote.getCurrentWindow();
+  w.on("close",function(){
+      rs.proc.kill();
+      });
+  var d=w.getDevice();
+  var device=require("../device");
+  var rs=device.createLogStream(d);
+  var buffer="";
+  var started=false;
+  rs.on("data",function(d){
+      var str=d.toString("utf8");
+      if (started){
+        board.innerText+=str;
+        sc();
+        }else{
+      buffer+=str;
+       }
+  });
+  function sc(){
+    var autoScroll=false;
+    var obj=$(board);
+      if ($(window).scrollTop() > obj.height()-1000){
+      autoScroll=true;
+    }
+    if (autoScroll){
+      $(window).scrollTop($("body").height())
+    }
+  }
+  setTimeout(function(){
+  board.innerText+=buffer;
+  buffer="";
+  started=true;
+  sc();
+  },3000);
+</script>
+</html>

@@ -1,0 +1,16 @@
+<div ng-controller="home">
+  <div class="flex-row itemsStretch fullscreen">
+    <div class="colorlight relative vscroll" id="menu">
+      <ng-include src="'./tmpl/menu.html'">
+    </div>
+    <div ui-view class="relative vscroll nooverflow" style="flex:1;-webkit-box-shadow: -2px 0 8px 1px #000000; box-shadow: -2px 0 8px 1px #000000;">
+      <div class="flex-row fullscreen itemsStretch">
+        <div class="flex-center flex-column width100p">
+          <div class="flex-center textcenter" style="font-size:1.8em;">
+            Please choose a function from navigation bar on the left.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

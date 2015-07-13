@@ -1,0 +1,45 @@
+<div class="flex-column itemsStretch colorlight padding10 animated fadeInRightSmall fast fullscreen" ng-controller="platform.buildHistory">
+  <h3 class="lighter"><span ng-click="back()" class="glyphicon glyphicon-arrow-left lighter padding10 clickable hover animated rotateIn" ></span>Build History</h3>
+  <div class="flex-row itemsStretch">
+
+    <div class="flex-column itemsStretch vscroll">
+      <h2 class="lighter" loading-label="initApps" auto-load="true">Choose App</h2>
+      <div class="padding10" ng-repeat="p in domain.getProjects()">
+        <small class="colordim">{{p.title}}</small>
+        <div ng-class="{'selected':curApp.guid===app.guid}"
+          class="clickable hover padding10" btn-async="{{app.guid}}" ba-click="showHistory(app,p)"
+          ng-repeat="app in domain.getBuildableApps(p.guid)">
+          <span class="icon-{{domain.getAppType(app)}} icon-2x padding5" style="vertical-align:middle"></span>
+          {{app.title}}
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="builds.length>0" class="flex-column itemsStretch animated zoomIn fast">
+      <h2 class="lighter" auto-load="true">History Builds</h2>
+      <div class="vscroll nohscroll">
+        <div class="padding10 flex-column itemsStretch historyItem" ng-repeat="b in builds">
+          <div class="flex-row" style="align-items:center">
+            <span class="icon marginright5 icon-{{util.convertDestinationCls(b.destination)}}"
+              style="font-size:2em;"
+              ></span>
+              <div class="flex-row">
+                <div class="flex-column">
+                  <div class="clickable hover padding10 marginright5" ng-click="install(b)">Install</div>
+                  <div class="clickable hover padding10 marginright5" ng-click="download(b)">Download</div>
+                </div>
+                <div class="flex-column">
+                  <div class="clickable hover padding10 marginright5" ng-click="ota(b)">Copy OTA</div>
+                  <div class="clickable hover padding10" ng-click="qr(b)">QR Code</div>
+                </div>
+              </div>
+            <!--<div ng-click="download(b)" class="padding10 clickable hover marginright15">Download</div>-->
+            <!--<div ng-click="ota(b)" class="padding10 clickable hover marginright15">OTA</div>-->
+            <!--<div ng-click="qr(b)" class="padding10 clickable hover marginright15">QR</div>-->
+          </div>
+          <small>Build Date: {{b.sysCreated}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

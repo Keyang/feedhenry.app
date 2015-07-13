@@ -1,0 +1,74 @@
+<div class="flex-column" ng-controller="home.menu">
+  <div class="flex-row padding10">
+    <div class="logo small"></div>
+    <div class="flex-column flex-center">
+      <div class="flex-center" style="font-size:1.8em;">Red Hat</div>
+      <div class="width100p divider bglight"></div>
+      <div class="colorwhite">MOBILE PLATFORM</div>
+    </div>
+  </div>
+
+  <div class="flex-column section">
+    <div class="section_head">DOMAINS</div>
+    <div ng-repeat="d in storage.get('domain')" class="flex-row itemsCenter">
+      <div class="clickable hover item" style="flex:1" ng-class="{selected:getCurIndex()==$index}" ng-click="openPlatform($index)">{{d.name}}</div>
+      <div ng-click="storage.rm('domain',$index)" class="clickable hover glyphicon glyphicon-trash padding10"></div>
+    </div>
+    <div class="item clickable hover textcenter lighter letterspace-loose" ng-click="addDomainClick()"><span class="glyphicon glyphicon-plus"></span>ADD NEW</div>
+  </div>
+
+  <div class="flex-column section animated fadeInUpBig" ng-if="device.list().length>0">
+    <div class="section_head">DEVICES<span class="glyphicon glyphicon-repeat pull-right clickable" ng-click="refreshDevice()" ng-class="{'animated infinite rotate':loadDevice}"></span>
+    </div>
+    <ng-include src="'./tmpl/deviceList.html'"></ng-include>
+  </div>
+
+  <div class="flex-column itemsStretch section animated fadeInUpBig" ng-if="buildQ.all().length>0">
+    <div class="section_head">BUILDS</div>
+    <div class="padding10" ng-repeat="b in buildQ.all()">
+      <div class="padding5" ng-class='{"animated infinite fadeInOut":b.status==="pending"}'>{{b.param.appName}}</div>
+
+      <div ng-if="b.status==='pending'" class="progress" style="height:8px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="{{b.progress}}" aria-valuemin="0" aria-valuemax="1" style="width:{{b.progress*100}}%">
+        </div>
+      </div>
+
+      <div class="flex-row" ng-if="b.status==='finished'">
+        <div class="flex-column">
+          <div class="clickable hover padding10 marginright5" ng-click="install(b)">Install</div>
+          <div class="clickable hover padding10 marginright5" ng-click="download(b)">Download</div>
+        </div>
+        <div class="flex-column">
+          <div class="clickable hover padding10 marginright5" ng-click="ota(b)">Copy OTA</div>
+          <div class="clickable hover padding10" ng-click="qr(b)">QR Code</div>
+        </div>
+      </div>
+
+      <div ng-if="b.status==='error'">
+        <div class="clickable hover padding10 marginright5" ng-click="error(b)">Show Error</div>
+      </div>
+      <div ng-if="b.status==='waiting'">
+        <div>Waiting...</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-column itemsStretch section animated fadeInUpBig" ng-if="installQ.all().length>0">
+    <div class="section_head">Install</div>
+    <div class="padding10" ng-repeat="b in installQ.all()">
+      <div class="padding5 flex-column colordim small">
+        <span>Install: {{b.props.appName}}</span>
+        <span>To: {{b.props.device.name}}</span>
+      </div>
+      <div ng-if="b.props.status==='finished'">
+        <div class="clickable hover padding10 marginright5" ng-click="error(b)">Show Result</div>
+      </div>
+      <div ng-if="b.props.status==='pending'" class="progress" style="height:8px;">
+        <div class="progress-bar progress-bar-striped active" role="progressbar" 
+          style="width:{{b.props.progress*100}}%">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,25 @@
+<div ng-init="reviewClaimsInit()" class="whiteCanvas">
+    <ul id="reviewClaimul">
+        <div ng-if="!cliamDeatails" class="noClaimMsg">No claim submitted yet.</div>
+        <div ng-repeat="claimData in cliamDeatails">
+            <!--<li class="claim-list collapsible" ng-click="handleClaimList($index + 1)" id="nav-section{{$index + 1}}"> <div class="claim-price-container"><img class="claim-image" src="images/claims_white.png"><div class="claim-value">&#8364; {{claimData.amount}}</div> </div><div class="claim-heading"><span>{{claimData.treatmentType}}<span class="claim-date">{{claimData.treatmentDate | date: 'dd MMM yyyy'}}</span></span></div> <span></span></li>-->
+           <li class="claim-list collapsible" ng-click="handleClaimList($index + 1)" id="nav-section{{$index + 1}}"> <div class="claim-price-container"><img class="claim-image" src="images/claims_white.png"><div class="claim-value">&#8364; {{claimData.amount| limitTo: 3 }}{{claimData.amount.length > 3 ? '...' : ''}}</div> </div><div class="claim-heading"><span>{{claimData.treatmentType| limitTo: 10 }}{{claimData.treatmentType.length > 10 ? '...' : ''}}<span class="claim-date">{{claimData.treatmentDate | date: 'dd MMM yyyy'}}</span></span></div> <span></span></li> 
+            <div class="claim-details-container">
+                <ul>
+                    <!--<li><div class="claim-details-label">Treatment Type:</div><div class="claim-details-value">GP visit</div></li>-->
+                    <li>
+                        <!--<div class="claim-details-label">Treatment Date:</div><div class="claim-details-value">08 OCT 2014</div>-->
+                        <ul class="receipt-container">
+                            <!--<li class="receipt-header"><div class="receipt-log"></div><div class="receipt-title">{{claimData.name}}</div><div style="clear:both;"></div></li>-->
+                            <li><div class="claim-details-label">Receipt Image:</div><div class="claim-details-value" style="width: 49% !important"><img ng-hide="platform=='Win32NT'" class="receipt-image" src="{{claimData.img}}" /> <div ng-if="platform == 'Win32NT'" style="background-image:url({{claimData.img}}); width:16px;height:18px; background-size:100% 100%;display:inline-block">
+                                    </div></div><div style="clear:both;"></div></li>
+                            <li><div class="claim-details-label">Treatment Total:</div><div class="claim-details-value" style="width: 49% !important">&#8364; {{claimData.treatmentTotal}}</div><div style="clear:both;"></div></li>
+                            <li><div class="claim-details-label">Treatment Type:</div><div class="claim-details-value" style="width: 49% !important">{{claimData.treatmentType}}</div><div style="clear:both;"></div></li>
+                        </ul>
+                    </li>
+                    <div style="clear:both;"></div>
+                </ul>
+            </div>
+        </div>
+    </ul>
+</div>

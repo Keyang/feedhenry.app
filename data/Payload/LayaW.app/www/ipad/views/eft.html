@@ -1,0 +1,44 @@
+<div ng-init="eftInit()" >
+    <div class="whiteCanvas">
+        <ul class="whiteForm">
+            <li ng-click="setFocus('accHolderName')">
+                <div class="formLabel">Account Holder:</div>
+                <div class="formValue"><input ng-model="eftForm.name" id="accHolderName" type="text" id="eftAccHolderName" placeholder="Account Holder" class="changePinTxt gray"></div>
+            </li>
+            <li ng-click="setFocus('ibanInput')">
+                <div class="formLabel">IBAN:</div>
+                <div class="formValue"><input style="width:155px;" ng-model="eftForm.iban" id="ibanInput" maxlength="22" type="text" placeholder="IBAN" class="changePinTxt gray"></div>
+            </li>
+            <li ng-click="setFocus('bicInput')">
+                <div class="formLabel">BIC:</div>
+                <div class="formValue"><input ng-model="eftForm.bic" id="bicInput" maxlength="11" type="text" placeholder="BIC" class="changePinTxt gray"></div>
+            </li>
+            <li ng-click="setFocus('bankNameInput')">
+                <div class="formLabel">Bank Name:</div>
+                <div class="formValue"><input ng-model="eftForm.bankName" id="bankNameInput" type="text" placeholder="Bank Name" class="changePinTxt gray"></div>
+            </li>
+            <li ng-click="setFocus('bankAddInput')">
+                <div class="formLabel">Bank Address:</div>
+                <div class="formValue"><input ng-model="eftForm.bankAdd" id="bankAddInput" type="text" placeholder="Bank Address" class="changePinTxt gray"></div>
+            </li>
+            <li class="noBorder">
+                <div class="formLabel">Date:</div>
+                <div class="formValue"><input ng-model="eftForm.date" id="eftDate" type="text" disabled placeholder="Date" class="changePinTxt "></div>
+            </li>
+        </ul>
+        
+        <div ng-click="showBankDeatilsInforPopup()" class="eftInfoOuter">
+            <div class="eftImg"></div>
+            <div class="eftInfoTxt">Why do I need to provide this information?</div>
+        </div>
+
+        <div ng-click="confirm()" style="overflow: inherit;" class="pinkBtn">
+            SAVE & SUBMIT
+            <div class="btnArrow"></div>
+        </div>
+         <div class="whiteSpace"></div>
+    </div>
+    
+    <div id="submitClaim"  class="hidden"></div>
+
+</div>

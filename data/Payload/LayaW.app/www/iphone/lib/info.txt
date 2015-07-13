@@ -1,0 +1,10 @@
+**** This file contains information about all the $rootScope varibles across the application *****
+
+$rootScope.selItemData  //stores JSON Object for Selected item from Location List
+$rootScope.locationListdata //stores JSON array for the location list
+rootScope.startLocation //stores JSON object for start location selected from first page
+rootScope.endLocation   //stores JSON object for end location selected from first page
+$rootScope.mapItRouteData    //stores JSON obj for path image and turns
+$rootScope.mapItDir   //valriable used to show turns it holds turns array
+$rootScope.mapItRouteData  //hold the complete route details between 2 points
+ $rootScope.scannedId // holds scanned location id

@@ -1,0 +1,144 @@
+[connected]
+
+
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: --- syslogd restarted ---
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.CoreDuetAdmissionControl" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.HealthKit" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.HomeKit" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.SoftwareUpdateBridge.companion" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.aosnotifyd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.cloudd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.clouddocs" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.family.asl" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.iad.logging" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.iad.logging" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.icloud.FindMyDevice" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.ind.asl" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.photobackend" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.photos" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.securityd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.tips" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail syslogd[1351] <Notice>: Configuration Notice:
+	ASL Module "com.apple.tipsd" claims selected messages.
+	Those messages may not appear in standard system log files or in the ASL database.
+Jul 13 12:56:09 iPhone-5c-from-Network-Rail com.apple.xpc.launchd[1] (com.apple.syslogd[17]) <Notice>: Service exited due to signal: Segmentation fault: 11
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail com.apple.xpc.launchd[1] (com.apple.syslogd[1351]) <Warning>: Endpoint has been activated through legacy launch(3) APIs. Please switch to XPC or bootstrap_check_in(): com.apple.system.logger
+Jul 13 12:56:10 iPhone-5c-from-Network-Rail ReportCrash[1350] <Notice>: Saved report to /Library/Logs/CrashReporter/syslogd_2015-07-13-125609_iPhone-5c-from-Network-Rail.ips
+Jul 13 12:56:21 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay read 51 total bytes: 
+	========================
+	ASL is here to serve you
+Jul 13 12:56:21 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 12:56:41 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099806.829299 wlan0.A[20532] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 12:56:46 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099811.861818 wlan0.A[20533] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 12:56:57 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 12:57:01 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099826.943132 wlan0.A[20534] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 12:57:22 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099847.055849 wlan0.A[20535] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 12:57:25 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 12:57:57 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099882.295536 wlan0.A[20536] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 12:58:07 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099892.340129 wlan0.A[20537] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 12:58:56 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay read 51 total bytes: 
+	========================
+	ASL is here to serve you
+Jul 13 12:58:56 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 12:59:22 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099967.825269 wlan0.A[20538] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 12:59:27 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 099972.860433 wlan0.A[20539] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 12:59:31 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 12:59:57 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100003.017223 wlan0.A[20540] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Enabling lock screen media controls updates for screen turning on.
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Updating supported commands for now playing application.
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail sharingd[26] <Notice>: 13:00:02.473 : Stopping Handoff scanning
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail wirelessproxd[45] <Notice>: (Error) trying to stop a scan while the central isn't available
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: device bootloaded
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 6->6
+Jul 13 13:00:02 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100008.026789 wlan0.A[20541] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 13:00:09 iPhone-5c-from-Network-Rail locationd[64] <Notice>: Gesture EnabledForTopCLient: 0, EnabledInDaemonSettings: 0
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail kernel[0] <Notice>: AppleMultitouchN1SPI: updating power statistics
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Disabling lock screen media controls updates for screen turning off.
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 6->255
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail sharingd[26] <Notice>: 13:00:11.894 : Stopping Handoff scanning
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail wirelessproxd[45] <Notice>: (Error) trying to stop a scan while the central isn't available
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail kernel[0] <Notice>: IOReturn AppleCLCD::setActivePixelBacklightModulation(bool, bool): no power
+Jul 13 13:00:11 iPhone-5c-from-Network-Rail locationd[64] <Notice>: Gesture EnabledForTopCLient: 0, EnabledInDaemonSettings: 0
+Jul 13 13:00:15 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 13:01:24 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay read 51 total bytes: 
+	========================
+	ASL is here to serve you
+Jul 13 13:01:24 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Enabling lock screen media controls updates for screen turning on.
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Updating supported commands for now playing application.
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail sharingd[26] <Notice>: 13:02:00.713 : Stopping Handoff scanning
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail wirelessproxd[45] <Notice>: (Error) trying to stop a scan while the central isn't available
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: device bootloaded
+Jul 13 13:02:00 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 6->6
+Jul 13 13:02:03 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100128.774627 wlan0.A[20542] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 13:02:08 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100133.808350 wlan0.A[20543] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 13:02:09 iPhone-5c-from-Network-Rail kernel[0] <Notice>: AppleMultitouchN1SPI: updating power statistics
+Jul 13 13:02:09 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Disabling lock screen media controls updates for screen turning off.
+Jul 13 13:02:09 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 6->255
+Jul 13 13:02:10 iPhone-5c-from-Network-Rail sharingd[26] <Notice>: 13:02:10.127 : Stopping Handoff scanning
+Jul 13 13:02:10 iPhone-5c-from-Network-Rail wirelessproxd[45] <Notice>: (Error) trying to stop a scan while the central isn't available
+Jul 13 13:02:10 iPhone-5c-from-Network-Rail locationd[64] <Notice>: Gesture EnabledForTopCLient: 0, EnabledInDaemonSettings: 0
+Jul 13 13:02:10 iPhone-5c-from-Network-Rail kernel[0] <Notice>: IOReturn AppleCLCD::setActivePixelBacklightModulation(bool, bool): no power
+Jul 13 13:02:38 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100163.968899 wlan0.A[20544] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x1)
+Jul 13 13:02:42 iPhone-5c-from-Network-Rail syslog_relay[170] <Notice>: syslog_relay found the ASL prompt. Starting...
+Jul 13 13:02:43 iPhone-5c-from-Network-Rail kernel[0] <Notice>: 100169.002996 wlan0.A[20545] AppleBCMWLANConfigManager::configureRoamingProfile(): Received new roaming profile 3 (was 3, flag=0x0)
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 255->6 (deferring until bootloaded)
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Enabling lock screen media controls updates for screen turning on.
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail SpringBoard[43] <Warning>: [MPUSystemMediaControls] Updating supported commands for now playing application.
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail sharingd[26] <Notice>: 13:02:49.467 : Stopping Handoff scanning
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail wirelessproxd[45] <Notice>: (Error) trying to stop a scan while the central isn't available
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: device bootloaded
+Jul 13 13:02:49 iPhone-5c-from-Network-Rail backboardd[57] <Notice>: MultitouchHID: detection mode: 6->6
+Jul 13 13:02:52 iPhone-5c-from-Network-Rail locationd[64] <Notice>: Gesture EnabledForTopCLient: 0, EnabledInDaemonSettings: 0

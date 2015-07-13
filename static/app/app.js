@@ -1,0 +1,32 @@
+var app=angular.module("feedhenryApp",["ui.router","ngDialog"]);
+
+app.config(function($stateProvider){
+  $stateProvider
+  .state("splash",{
+    templateUrl:"./tmpl/splash.html"
+  })
+  .state("home",{
+    templateUrl:"./tmpl/home.html"
+  })
+  .state("home.newDomain",{
+    templateUrl:"./tmpl/newDomain.html"
+  })
+  .state("home.platform",{
+    templateUrl:"./tmpl/platform.html",
+  })
+  .state("home.platform.build",{
+    templateUrl:"./tmpl/platform_build.html",
+  })
+  .state("home.platform.studio",{
+    templateUrl:"./tmpl/platform_studio.html",
+  })
+  .state("home.device",{
+    templateUrl:"./tmpl/device.html",
+  })
+  .state("home.platform.buildHistory",{
+    templateUrl:"./tmpl/platform_buildhistory.html",
+  })
+});
+app.run(function($state,fhc,data){
+  $state.go("splash");
+});

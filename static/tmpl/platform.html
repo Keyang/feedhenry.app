@@ -1,0 +1,25 @@
+<div ui-view class="flex-column padding10 colorlight itemsStretch fullscreen" ng-controller="home.platform">
+  <div class="flex-row">
+    <h2 class="lighter letterspace-loose " style="flex:1">
+    Please Choose A Task
+    </h2>
+    <div class="flex-center roundBorderLight padding5">
+      <span class="glyphicon glyphicon-search"></span>
+      <input 
+      ng-model="searchStr"
+      class="bgdark" 
+      style="border:none;outline:none;" 
+      placeholder="search" 
+      type="text"/>
+    </div>
+  </div>
+  <div class="flex-column itemsStretch">
+    <div class="flex-row flex-wrap  cat fast padding10" ng-repeat="cat in tasks">
+      <div ng-class='{"blur":filterOut(t,searchStr), "shadow":searchStr && !filterOut(t,searchStr),"transition fast":searchStr}' 
+        class="task clickable hover animated fadeInUpSmall  marginright15" ng-repeat="t in cat" ng-click="performTask(t)">
+        <span class="{{t.icon}}" ></span>
+        <div>{{t.name}}</div>
+      </div>
+    </div>
+  </div>
+</div>

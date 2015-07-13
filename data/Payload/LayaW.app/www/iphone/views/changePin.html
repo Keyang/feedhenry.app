@@ -1,0 +1,38 @@
+<div ng-init="pinInit()" >
+    <div class="whiteCanvas">
+        <ul class="changePinData whiteForm" >
+            <li ng-click="setFocus('oldPin')">
+                <div class="formLabel">Current Pin:</div>
+                <div class="formLabel">
+                    <input ng-show="platform!='Win32NT'" maxlength="4" id="oldPin" placeholder="Current Pin" type="tel" valid-number ng-model="pin.current" class="changePinTxt gray passwordType">
+                    <input ng-show="platform=='Win32NT'" maxlength="4" id="oldPin" placeholder="Current Pin" type="password" valid-number ng-model="pin.current" class="changePinTxt gray passwordType">
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li ng-click="setFocus('newPin')">
+                <div class="formLabel">New Pin:</div>
+                <div class="formLabel">
+                    <input ng-show="platform!='Win32NT'" maxlength="4" id="newPin" placeholder="New Pin" type="tel" valid-number ng-model="pin.new" class="changePinTxt gray passwordType">
+                    <input ng-show="platform=='Win32NT'" maxlength="4" id="newPin" placeholder="New Pin" type="password" valid-number ng-model="pin.new" class="changePinTxt gray passwordType">
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li class="noBorder" ng-click="setFocus('newPin2')">
+                <div class="formLabel">Confirm Pin:</div>
+                <div class="formLabel">
+                    <input ng-show="platform!='Win32NT'" maxlength="4" id="newPin2" placeholder="Confirm Pin" type="tel" valid-number ng-model="pin.new2" class="changePinTxt gray passwordType">
+                    <input ng-show="platform=='Win32NT'" maxlength="4" id="newPin2" placeholder="Confirm Pin" type="password" valid-number ng-model="pin.new2" class="changePinTxt gray passwordType">
+                </div>
+                <div class="clear"></div>
+            </li>
+        </ul>
+
+        <div  id="pinError" class="errorMsgRed changePinErrorMsg">{{pin_error}}</div>
+        <div ng-click="validate()" class="pinkBtn claimNextBtn">
+            CHANGE PIN
+            <div class="btnArrow"></div>
+        </div>
+        <div class="whiteSpace"></div>
+    </div>
+
+</div>

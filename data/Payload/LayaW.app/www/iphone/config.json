@@ -1,0 +1,40 @@
+{
+  "plugins": [{
+    "id": "org.apache.cordova.device",
+    "version": "0.2.8",
+    "url": "https://github.com/apache/cordova-plugin-device.git#r0.2.8"
+  }, {
+    "id": "org.apache.cordova.network-information",
+    "version": "0.2.7",
+    "url": "https://github.com/apache/cordova-plugin-network-information.git#r0.2.7"
+  }, {
+    "id": "org.apache.cordova.file",
+    "version": "0.2.5",
+    "url": "https://github.com/apache/cordova-plugin-file.git#r0.2.5"
+  }, {
+    "id": "org.apache.cordova.camera",
+    "version": "0.2.7",
+    "url": "https://github.com/apache/cordova-plugin-camera.git#r0.2.7"
+  }, {
+    "id": "org.apache.cordova.file-transfer",
+    "version": "0.4.0",
+    "url": "https://github.com/feedhenry/cordova-plugin-file-transfer.git#fh0.4.0"
+  }, {
+    "id": "com.feedhenry.plugins.splashscreen",
+    "version": "0.3.2",
+    "url": "https://github.com/feedhenry/cordova-plugin-splashscreen.git#fh0.3.2"
+  }, {
+    "id": "org.apache.cordova.inappbrowser",
+    "version": "0.3.1",
+    "url": "https://github.com/apache/cordova-plugin-inappbrowser.git#r0.3.1"
+  }, {
+    "id": "com.feedhenry.plugin.device",
+    "version": "0.0.2",
+    "url": "https://github.com/feedhenry/fh-cordova-plugin-device.git#fh0.0.2"
+  }, {
+    "id": "com.feedhenry.plugins.webview",
+    "version": "0.0.1",
+    "url": "https://github.com/feedhenry/fh-cordova-plugin-webview.git#fh0.0.1"
+  }]
+
+}

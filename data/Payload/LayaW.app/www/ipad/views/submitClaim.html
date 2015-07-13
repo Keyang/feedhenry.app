@@ -1,0 +1,176 @@
+<div ng-init="claimInit()" >
+
+    <!-- ************************ Top Navigation Bar ************************ -->
+    <div class="claimTopBarOuter">
+        <div class="claimTopBar">
+            <ul id="claimTopBarMenuOuter">
+                <li>
+                    <img ng-click="showImagePage()" id="camIcon" src="images/camera_pink.png" />
+                    <div id="camIconTxt" class="claimTopBarTxt">Receipt Uploaded</div>
+                    <img id="camIconArrow" class="claimDwnArrow" src="images/progress.png" />
+                </li>
+                <li>
+                    <img ng-click="showCashPage()" id="cashIcon" src="images/cash_grey.png" />
+                    <div id="cashIconTxt" class="claimTopBarTxt "></div>
+                    <img id="cashIconArrow" class="claimDwnArrow" src="images/progress.png" />
+                </li>
+
+                <li>
+                    <img ng-click="showTreatmentPage()" id="treatmentIcon" src="images/treatment_grey.png" />
+                    <div id="treatmentTxt" class="claimTopBarTxt "></div>
+                    <img id="treatmentIconArrow" class="claimDwnArrow" src="images/progress.png" />
+                </li>
+
+                <li>
+                    <img  id="receiptIcon" src="images/summary_grey.png" />
+                    <div id="receiptIconTxt" class="claimTopBarTxt "></div>
+                    <img id="receiptIconArrow" class="claimDwnArrow" src="images/progress.png" />
+                </li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+        <div class="claimTopBarInfo"><span id="span1">Upload a </span><span id="span2" class="blueTxt" >photo </span><span id="span3">of your receipt</span></div>
+    </div>
+
+
+
+    <div class="whiteCanvas claimReceiptCanvas">
+        <!------------------------upload photo -------------------------->
+        <div id="captureImg">
+            <div  id="uploadPhoto" class="homeBtnOuter homeImgBtns">
+                <ul>
+                    <li ng-click="showPreview()"><a ><img src="images/photo_gallery.png" /></a></li>
+                    <li ng-click="showCamPopup()"><a ><img src="images/take_photo.png" /></a></li>
+                </ul>
+                <div class="clear"></div>
+                <div ng-show="showSummaryBtn" ng-click="gotoSummary()" id="" class="pinkBtn claimNextBtn">
+                    SHOW SUMMARY
+                    <div class="btnArrow"></div>
+                </div>
+            </div>
+            <div ng-click="showImageOption()" id="preview" class="photoPreview">
+                <div class="imagePreview">
+                    <div ng-click="showImageOption()" class="imageInfo">
+                        <div class="changePhotoLogo"></div>
+                        <div class="changePhotoTxt blueTxt">Tap photo to change</div>
+                    </div>
+                </div>
+                <div ng-click="showReceiptAmt()" id="imageNextButtonPink" class="pinkBtn claimNextBtn">
+                    NEXT
+                    <div class="btnArrow"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-------------------End--upload photo -------------------------->
+
+        <!----------------------Receipt Amount ----------------------- -->
+        <div id="receiptAmout">
+            <div class="claimAmt">
+                <div class="correncySymbol">&#8364;</div>
+                <div class="claimTxtBox" >
+                    <input ng-if="platform == 'iOS'" ng-model="$parent.claimAmount"  class="claimTxtBoxInput" id="receiptAmt" placeholder="0"  max-number type="number" maxlength="8"/>                    
+                    <input ng-if="platform != 'iOS'" ng-keydown="keydown($event)"  class="claimTxtBoxInput" id="receiptAmt" placeholder="0" ng-model="$parent.claimAmount" numbers-only type="tel"/>
+                </div>
+            </div>
+            <div ng-click="showTreatmentDiv()"  class="pinkBtn claimNextBtn">
+                NEXT
+                <div class="btnArrow"></div>
+            </div>
+        </div>
+
+
+        <!-------------------------Treatment Type------------------- -->
+        <div id="treatmentDiv">
+            <textarea ng-model="treatmentType" ng-keydown="keydown($event)" id="treatmentTextArea" class="treatmentTextArea" placeholder="Enter treatment claim type..." rows="8" cols="30" maxlength="50" ></textarea>
+            <div id="textarea_feedback"></div>
+            <div id="showReceiptSummary" ng-click="showReceiptSummary()" class="pinkBtn claimNextBtn">
+                NEXT
+                <div class="btnArrow"></div>
+            </div>
+        </div>
+
+
+        <!--------------------END--Treatment Type------------------- -->
+
+
+
+        <!------------------------Receipt Summary------------------------- -->
+        <div class="claimReceiptList">
+            <div  class="claimReceiptOuter">
+                <div ng-repeat="item in receiptVal">
+                    <div class="submitReceiptNameOuter">
+                        <div  class="receiptLogo"></div>
+                        <div class="receiptNameTxt">{{item.name}}</div>
+                        <div ng-click="showDelPopup(item)" class="deleteLogo"></div>
+                    </div>
+
+                    <div id="receiptIndex{{$index + 1}}" class="receiptDetailsOuter">
+                        <ul class="receiptDeatilsUl">
+                            <li id="receiptLi{{$index + 1}}" ng-click="showChangeImgPopup($index)">
+                                <div class="formLabel receiptList" style="width: 49% !important">Receipt Image: </div>
+                                <div class="formLabel receiptList"><div class="claim-details-value">
+                                    <img ng-hide="platform=='Win32NT'" class="receipt-image receiptImage" data-hehe="{{item.img}}" src="{{item.img}}" />
+                                    <div id="iconImage" ng-if="platform == 'Win32NT'" style="background-image:url({{item.img}}); width:16px;height:18px; background-size:100% 100%;display:inline-block">
+                                    </div>
+                                </div>
+                                <div class="greyArrow"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li>
+                                <div class="formLabel receiptList" style="width: 49% !important">Treatment Total:</div>
+                                <div class="formLabel receiptList"><span style="float: left;" class="currencySymbol">&#8364;</span><input ng-if="platform == 'iOS'" id="receiptTotalIndex{{$index + 1}}" style="float: left;" max-number type="number" maxlength="8" ng-model="item.treatmentTotal" value="{{item.treatmentTotal}}" class="receiptTxtBoxWidth changePinTxt gray">                                    
+                                <input ng-if="platform != 'iOS'" id="receiptTotalIndex{{$index + 1}}" style="float: left;" numbers-only type="tel" ng-model="item.treatmentTotal" value="{{item.treatmentTotal}}" class="receiptTxtBoxWidth changePinTxt gray"></div>
+                                <div class="greyArrow"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li class="hidden">
+                                <div class="formLabel receiptList">Treatment Date:</div>
+                                <div class="formLabel receiptList"><input  type="text" value="{{item.treatmentDate}}" class="changePinTxt gray"></div>
+                                <div class="greyArrow"></div>
+                                <div class="clear"></div>
+                            </li>
+                            <li class="noBorder">
+                                <div class="formLabel receiptList" style="width: 49% !important">Treatment Type:</div>
+                                <div class="formLabel receiptList"><input id="treatmentTypeListTxt{{$index + 1}}" maxlength="50" type="text" value="{{item.treatmentType}}"  class="changePinTxt gray receiptTxtIndex{{$index + 1}}"></div>
+                                <div class="greyArrow"></div>
+                                <div class="clear"></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+            <!-------------Buttons----------- -->
+            <div ng-click="addAnotherReceipt()"  class="blueBtn anotherReceiptBtn">
+                <div class="camBtnLogo"></div>
+                ADD ANOTHER RECEIPT
+                <div class="btnArrow"></div>
+            </div>
+            <div ng-click="showEft()"  class="pinkBtn ">
+                SUBMIT CLAIM
+                <div class="btnArrow"></div>
+            </div>
+
+            <div  ng-click="showAmendBankDetailsWarning()" ng-show="amendFlag" class="bankDetailsUpdateTxt">Amend my Bank Details</div>
+            <!--<div ng-click="updateBankDetails()" ng-show="amendFlag" class="bankDetailsUpdateTxt">Amend my Bank Details</div>-->
+
+        </div>        
+    </div>
+
+</div>
+
+<div id="confirmDelBtn"  class="hidden"></div>
+<div id="galleryBtn"  class="hidden"></div>
+<div id="cameraBtn"  class="hidden"></div>
+<div id="cameraActionBtn"  class="hidden"></div>
+<div id="cancelClaimBtn"  class="hidden"></div>
+<div id="claimSubmit"  class="hidden"></div>
+<div id="updateBankDetails"  class="hidden"></div>
